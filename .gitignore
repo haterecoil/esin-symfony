@@ -1,0 +1,11 @@
+/.env.local
+/.env.local.php
+/.env.*.local
+.idea/
+.vs_code/
+/docker/mysql/data/*
+!/docker/mysql/data/.gitkeep
+
+
+/docker/php/composer_cache/*
+!/docker/php/composer_cache/.gitkeep
