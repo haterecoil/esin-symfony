@@ -6,16 +6,40 @@ Projet pédagogique e-commerce
 
 Pour installer et mettre en route les services docker (php, nginx, mysql/mariadb) :
 
+1. Cloner le repo git
+2. Configurer les fichiers .env et /app/.env
+3. `docker-compose up`
+
+ 
+
+### Cloner le repo : 
+
 ```bash
 # cloner le répertoire git
 git clone https://gitlab.com/haterecoil/esin-symfony.git;
+```
 
-# démarrer docker
+### Démarrer docker :
+
+```bash
 docker compose up;
 
 # optionellement (selon votre version de docker)
 docker-compose up;
 ```
+
+### Configurer l'environnement
+
+Copier/coller le fichier `/.env` en `/.env.local` et modifier les valeurs tel que souhaité.
+
+Copier/coller le fichier `/app/.env` en `/app/.env.local` et modifier les valeurs, notamment 
+
+## Configuration
+
+Docker : 
+- copier/coller le fichier `/.env` en `/.env.local` et modifier les valeurs
+
+le fichier `/app/.env` d
 
 ## Particularités de docker
 
