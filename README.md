@@ -10,22 +10,28 @@ Pour installer et mettre en route les services docker (php, nginx, mysql/mariadb
 2. Configurer les fichiers .env et /app/.env
 3. `docker-compose up`
 
+
+Vous pouvez accéder à : `http://127.0.0.1:38080` !
+
+
+PS: le port dépend de la valeur NET_NGINX_PORT dans votre /.env
  
 
-### Cloner le repo : 
+### Cloner le repo
 
 ```bash
 # cloner le répertoire git
 git clone https://gitlab.com/haterecoil/esin-symfony.git;
 ```
 
-### Configurer l'environnement
+### Configurer l'environnement
 
 Copier/coller le fichier `/.env` en `/.env.local` et modifier les valeurs tel que souhaité.
 
 Copier/coller le fichier `/app/.env` en `/app/.env.local` et modifier les valeurs, notamment 
 
-### Démarrer docker :
+
+### Démarrer docker :
 
 ```bash
 docker compose up;
