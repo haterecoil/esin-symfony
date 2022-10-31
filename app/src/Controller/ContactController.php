@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Message;
+use App\Repository\MessageRepository;
 use PhpParser\Builder\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -10,20 +11,27 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ManagerRegistry;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(): Response
+    public function index(MessageRepository $messageRepository): Response
     {
+
+        $messages = $messageRepository->findAll();
+
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
+            'messages' => $messages,
         ]);
     }
 
-    #[Route('/contact/new', name: 'app_contact')]
-    public function new(Request $request): Response
+    #[Route('/contact/new', name: 'app_contact_new')]
+    public function new(Request $request, ManagerRegistry $doctrine): Response
     {
+
+        $entityManager = $doctrine->getManager();
 
         // création d'un message vide
         $message = new Message();
@@ -31,6 +39,7 @@ class ContactController extends AbstractController
         $message->setContent('Un message par défaut');
 
         // receptacle pour le retour utilisateur
+        /* @var ?Message $sentMessage */
         $sentMessage = null;
 
         // créer un formulaire 
@@ -45,6 +54,9 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $sentMessage = $form->getData();
+            $sentMessage->setCreatedAt(new \DateTimeImmutable("now"));
+            $entityManager->persist($sentMessage);
+            $entityManager->flush();
         }
 
         // affichage de la page et donc du formulaire

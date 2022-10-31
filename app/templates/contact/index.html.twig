@@ -11,6 +11,14 @@
 <div class="example-wrapper">
     <h1>Contactez-nous</h1>
 
+    <p> merci pour vos messages </p>
+
+    <ul>
+        {% for oneMessage in messages %}
+            <li>{{oneMessage.content}} - {{oneMessage.createdAt|date("m/d/Y")}} </li>
+        {% endfor %}
+    </ul>
+
     Vous pouvez nous envoyer un message grace au formulaire suivant :
     <ul>
         <li>Your controller at <code><a href="{{ '/srv/esin/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
