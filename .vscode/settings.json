@@ -1,0 +1,6 @@
+{
+    "intelephense.environment.documentRoot": "./app/public",
+    "intelephense.environment.includePaths": [
+        "./app"
+    ]
+}

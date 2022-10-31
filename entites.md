@@ -43,3 +43,9 @@ class MessageRepository {
     public function findByDate($date): Message[]
 }
 ```
+
+# Setup
+
+Création de la base de données : `docker-compose exec php bin/console doctrine:database:create`
+
+Migrations : https://symfony.com/doc/current/doctrine.html#migrations-creating-the-database-tables-schema

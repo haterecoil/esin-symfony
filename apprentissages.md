@@ -20,3 +20,5 @@ https://www.doctrine-project.org/
 C'est un ORM.
 
 https://symfony.com/doc/current/doctrine.html#installing-doctrine
+
+`docker-compose up -d`

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Formulaire de contact</h1>
+    
+    {{ form(contact_form) }}
+
+    {% if sent_message is null %}
+        <p> Envoyez-nous un message gentil! </p>
+    {% else %}
+        <p> Le message envoyé : {{ sent_message.content }}
+    {% endif %}
+
+</div>
+{% endblock %}
