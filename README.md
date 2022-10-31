@@ -45,7 +45,14 @@ docker-compose up;
 Docker : 
 - copier/coller le fichier `/.env` en `/.env.local` et modifier les valeurs
 
-le fichier `/app/.env` d
+## Premier run
+
+Lors du premier démarrage, il faut installer les modules requis par le fichier composer.json
+
+```bash
+docker-compose exec php composer install;
+```
+
 
 ## Particularités de docker
 
