@@ -61,3 +61,23 @@ Exemples : 
 ### docker-compose ou docker compose ?
 
 Selon votre version de docker, il vous faudra utiliser l'un ou l'autre. 
+
+# To-do list
+
+
+Site e-commerce : 
+- page d'accueil
+- page de contact
+- liste de produits
+- un panier
+
+Lundi 31 octobre 
+- formulaires ! avec twig 
+- définir les entités
+
+## 31 octobre
+
+Création de page d'accueil et de listing produit : 
+1. Ajout de twig `docker-compose exec php composer require twig`
+2. Création d'un Controller Index `docker-compose exec php bin/console make:controller`
+3. Création d'un Controller Item `docker-compose exec php bin/console make:controller`
