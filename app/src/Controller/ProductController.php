@@ -29,6 +29,7 @@ class ProductController extends AbstractController
     }
 
     #[Route('/product/create', name: 'app_product_create')]
+    // @todo: modifier le template pour afficher un lien vers la page produit
     public function create(Request $request, ManagerRegistry $doctrine): Response
     {
         
@@ -60,6 +61,8 @@ class ProductController extends AbstractController
     }
 
     #[Route('/product/{id}', name: 'app_product_read')]
+    // @todo: modifier le template pour afficher le produit
+    // @todo: modifier le template pour ajouter un formulaire de type CheckoutCreateType
     public function read(): Response
     {
         return $this->render('product/index.html.twig', [

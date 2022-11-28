@@ -105,7 +105,12 @@ entité CheckoutProduct
 - - Checkout, foreign key
 
 1. créer Checkout (make:entity...) sans notion de CheckoutProduct
+- shippingAddress, textarea, nullable!!!
+- status, string, not nullable
 2. créer CheckoutProduct (make:entity..)
+- product, type: relation, ManyToOne, nullable, no method on Product
+- checkout, type: relation, ManyToOne, nullable, with method on Product
+- quantity
 
 #### Features manquantes 
 
