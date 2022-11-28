@@ -75,19 +75,44 @@ Product
 
 (dans l'idéal : on utilise une librairie qui permet le CRUD d'image)
 
+#### Rendre le produit
 
+- lien "acheter"
+- - input: ID du produit, quantité
+- - output: affiche une page d'achact (adresse, code de carte bleue)
 
-#### Modifier ma page d'accueil
+accueil (Home)
+produits (Produit)
+checkout (Checkout) -> créer un controller
+- adresse -> route + formulaire
+- paiement -> route + formulaire 
+- confirmation de commande
 
-- changer Controller et template pour afficher la liste des produits
+entité "Checkout"
+- adresse (un long texte avec l'adresse)
+- - shippingAddress, text, nullable
+- statut ('new', 'paid')
+- - status, string, not nullable
+- liste des articles choisis (des relations)
+- - CheckoutProduct
 
+entité CheckoutProduct
+- ref Article (foreign key)
+- - Product, foreign key
+- quantité (int)
+- - quantity, integer
+- id checkout (foreign key)
+- - Checkout, foreign key
 
-#### Rendre les produits achetables 
+1. créer Checkout (make:entity...) sans notion de CheckoutProduct
+2. créer CheckoutProduct (make:entity..)
 
+#### Features manquantes 
 
-
-
-
+- rendre le site joli (styles, js)
+- rendre le produit achetable 
+- sécuriser l'authentification 
+- mail de confirmation 
 
 
 
