@@ -67,5 +67,13 @@ class ContactController extends AbstractController
         ]);
     }
 
+    // nouvelle route contact 
+    #[Route('/contact/{id}', name: 'app_contact_detail')]
+    public function detail(Message $message) {
+        return $this->render('contact/detail.html.twig', [
+            'controller_name' => 'ContactController',
+            'message' => $message
+        ]);
+    }
     
 }
