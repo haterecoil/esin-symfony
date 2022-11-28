@@ -29,6 +29,7 @@ https://symfony.com/doc/current/doctrine.html#installing-doctrine
 - Entités (garder en mémoire des informations)
 - Templates (afficher les informations)
 - Controller (afficehr une page en fonction d'une URL)
+- Migration (outil pour faire évoluer notre base de données)
 
 ## Architecture
 
@@ -45,6 +46,7 @@ https://symfony.com/doc/current/doctrine.html#installing-doctrine
 #### Comment faire... ma page d'accueil
 
 - créer un Controller: Home 
+- - make:controller
 - créer une fonction dans le Controller qui est liée à la route "/"
 - - la fonction doit renvoyer un template twig 
 
@@ -53,11 +55,26 @@ Note: j'ai pas de produits !
 #### Créer des produits (CRUD)
 
 - créer une Entité "Product"
-- créer un Controlle "Product"
+- - `make:entity`
+- Migrer la base de donnée 
+- - `make:migration`
+- - `doctrine:migrations:migrate`
+- créer un Controller "ProductController"
 - - Create: une fonction pour créer (une fonction = un template)
 - - Read: afficher le détail
 - - Update: modifer le prduit
 - - Delete: le supprimer :dead:
+
+Product
+- name           string 
+- price          float
+- description    longtext
+- imageLink      string (stock un lien vers l'image)
+- stock          int
+
+(dans l'idéal : on utilise une librairie qui permet le CRUD d'image)
+
+
 
 #### Modifier ma page d'accueil
 
