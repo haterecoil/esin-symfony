@@ -30,6 +30,7 @@ https://symfony.com/doc/current/doctrine.html#installing-doctrine
 - Templates (afficher les informations)
 - Controller (afficehr une page en fonction d'une URL)
 - Migration (outil pour faire évoluer notre base de données)
+- Repository (permet d'intéragir avec mes entités)
 
 ## Architecture
 

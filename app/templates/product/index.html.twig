@@ -9,12 +9,24 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>nos produits</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/srv/esin/src/Controller/ProductController.php'|file_link(0) }}">src/Controller/ProductController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/srv/esin/templates/product/index.html.twig'|file_link(0) }}">templates/product/index.html.twig</a></code></li>
-    </ul>
+    <div>
+        <ul>
+            {# les boucles 'for' s'écrivent toujours "for element in list" #}
+            {# https://twig.symfony.com/doc/2.x/tags/for.html #}
+            {% for oneProduct in products %}
+                <li>
+                    <h2>{{ oneProduct.name }}</h2>
+                    <img src="{{oneProduct.imageLink}}"/ width=300 height=auto>
+                    <p>{{ oneProduct.description }}</p>
+                    <p>{{ oneProduct.price }} (disponible: {{ oneProduct.stock }} unités)</p>
+                </li>
+            {# on ferme la boucle avec "endfor" #}
+            {% endfor %}
+        </ul>
+    </div>
+
+
 </div>
 {% endblock %}

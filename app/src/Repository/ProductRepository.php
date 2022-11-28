@@ -39,6 +39,8 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    // @todo return available products only
+
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */
