@@ -28,6 +28,12 @@ class ContactController extends AbstractController
     }
 
     #[Route('/contact/new', name: 'app_contact_new')]
+    /** 
+     * $request contient l'ensemble de la requête HTTP, dont les données du formulaire 
+     * c'est donc nécessaire pour traiter le Form
+     * 
+     * $doctrine (ManagerRegistry) nous permet d'interagir avec la base de données
+    */
     public function new(Request $request, ManagerRegistry $doctrine): Response
     {
 
